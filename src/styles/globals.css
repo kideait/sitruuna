@@ -2,18 +2,21 @@
 
 @theme {
   --font-sans: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  --color-brand: #facc15;
-  --color-brand-dark: #ca8a04;
-  --color-bg-primary: #0f0f1e;
-  --color-bg-secondary: #1a1a2e;
-  --color-bg-card: #16213e;
-  --color-bg-hover: #1e2a4a;
-  --color-positive: #4ade80;
-  --color-warning: #facc15;
+  --color-brand: #94d60a;
+  --color-brand-dark: #87c800;
+  --color-brand-light: #a8e026;
+  --color-accent: #72c4d6;
+  --color-accent-dark: #5bb0c2;
+  --color-bg-primary: #0f1a0f;
+  --color-bg-secondary: #162016;
+  --color-bg-card: #1a2a1a;
+  --color-bg-hover: #223322;
+  --color-positive: #94d60a;
+  --color-warning: #e5c700;
   --color-danger: #ef4444;
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-border: #334155;
+  --color-text-primary: #f1f5f0;
+  --color-text-secondary: #94a898;
+  --color-border: #2d4a2d;
 }
 
 body {
@@ -40,5 +43,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #3d6a3d;
 }

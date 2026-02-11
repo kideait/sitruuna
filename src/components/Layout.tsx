@@ -27,18 +27,18 @@ export default function Layout({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#0f0f1e" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "#0f1a0f" }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-700/50 backdrop-blur-md" style={{ background: "rgba(26,26,46,0.9)" }}>
+      <header className="sticky top-0 z-50 border-b backdrop-blur-md" style={{ background: "rgba(22,32,22,0.92)", borderColor: "#2d4a2d" }}>
         <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl">🍋</span>
             <span className="text-xl font-bold">
-              <span className="text-yellow-400">Sitruuna</span>
-              <span className="text-slate-300">AI</span>
+              <span style={{ color: "#94d60a" }}>Sitruuna</span>
+              <span style={{ color: "#72c4d6" }}>AI</span>
             </span>
           </div>
-          <span className="hidden sm:block text-xs text-slate-500 bg-slate-800 px-2 py-1 rounded">
+          <span className="hidden sm:block text-xs px-2 py-1 rounded" style={{ color: "#72c4d6", background: "#72c4d615", border: "1px solid #72c4d630" }}>
             DEMO
           </span>
         </div>
@@ -53,9 +53,14 @@ export default function Layout({
                 onClick={() => onNavigate(item.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                   active
-                    ? "bg-yellow-400/10 text-yellow-400 border border-yellow-400/30"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
+                    ? ""
+                    : "hover:text-slate-200"
                 }`}
+                style={
+                  active
+                    ? { background: "#94d60a15", color: "#94d60a", border: "1px solid #94d60a30" }
+                    : { color: "#94a898" }
+                }
               >
                 <Icon size={16} />
                 {item.label}
@@ -71,11 +76,11 @@ export default function Layout({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-700/50 py-4 text-center text-xs text-slate-500" style={{ background: "#1a1a2e" }}>
+      <footer className="py-4 text-center text-xs" style={{ background: "#162016", borderTop: "1px solid #2d4a2d", color: "#6b8a6b" }}>
         <div>
-          <span className="text-yellow-400/60">SitruunaAI</span> Demo &bull; Kidea IT Oy
+          <span style={{ color: "#72c4d6" }}>SitruunaAI</span> Demo &bull; Kidea IT Oy
         </div>
-        <div className="mt-1 text-slate-600">DEMO – ei tuotantokäytössä</div>
+        <div className="mt-1" style={{ color: "#4a6a4a" }}>DEMO – ei tuotantokäytössä</div>
       </footer>
     </div>
   );

@@ -36,7 +36,7 @@ export default function RoutesView() {
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-all border ${
                 isActive
                   ? "border-current"
-                  : "border-slate-700/50 text-slate-400 hover:text-slate-200"
+                  : "border-[#2d4a2d] text-slate-400 hover:text-slate-200"
               }`}
               style={
                 isActive
@@ -61,8 +61,8 @@ export default function RoutesView() {
       {/* Route info */}
       <div className="grid sm:grid-cols-3 gap-3">
         <div
-          className="rounded-xl border border-slate-700/50 p-4"
-          style={{ background: "#16213e" }}
+          className="rounded-xl border border-[#2d4a2d] p-4"
+          style={{ background: "#1a2a1a" }}
         >
           <div className="text-xs text-slate-400 mb-1">Työntekijä</div>
           <div className="flex items-center gap-2">
@@ -77,21 +77,21 @@ export default function RoutesView() {
           </div>
         </div>
         <div
-          className="rounded-xl border border-slate-700/50 p-4"
-          style={{ background: "#16213e" }}
+          className="rounded-xl border border-[#2d4a2d] p-4"
+          style={{ background: "#1a2a1a" }}
         >
           <div className="text-xs text-slate-400 mb-1">Käynnit tänään</div>
-          <div className="text-2xl font-bold text-blue-400">{empApps.length}</div>
+          <div className="text-2xl font-bold" style={{ color: "#72c4d6" }}>{empApps.length}</div>
           <div className="text-xs text-slate-400 mt-1">
             Työtunteja: {totalWork}h
           </div>
         </div>
         <div
-          className="rounded-xl border border-slate-700/50 p-4"
-          style={{ background: "#16213e" }}
+          className="rounded-xl border border-[#2d4a2d] p-4"
+          style={{ background: "#1a2a1a" }}
         >
           <div className="text-xs text-slate-400 mb-1">Siirtymäaika yhteensä</div>
-          <div className="text-2xl font-bold text-yellow-400">{totalTravel} min</div>
+          <div className="text-2xl font-bold" style={{ color: "#94d60a" }}>{totalTravel} min</div>
           <div className="text-xs text-slate-400 mt-1">
             AI-optimoitu reitti
           </div>
@@ -100,8 +100,8 @@ export default function RoutesView() {
 
       {/* Timeline */}
       <div
-        className="rounded-xl border border-slate-700/50 p-4"
-        style={{ background: "#16213e" }}
+        className="rounded-xl border border-[#2d4a2d] p-4"
+        style={{ background: "#1a2a1a" }}
       >
         <h2 className="text-lg font-semibold mb-4">Päivän aikajana</h2>
         <div className="space-y-0">

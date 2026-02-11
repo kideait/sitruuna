@@ -22,9 +22,9 @@ import { areas } from "../data/areas";
 import type { AISuggestion, Area } from "../types";
 
 const areaColors: Record<Area, string> = {
-  "Varkaus keskusta": "#facc15",
-  "Varkaus etelä": "#4ade80",
-  "Varkaus pohjoinen": "#38bdf8",
+  "Varkaus keskusta": "#94d60a",
+  "Varkaus etelä": "#72c4d6",
+  "Varkaus pohjoinen": "#87c800",
   Leppävirta: "#f97316",
   Joroinen: "#a78bfa",
   Kangaslampi: "#f472b6",
@@ -68,38 +68,18 @@ const suggestions: AISuggestion[] = [
 
 function SuggestionIcon({ type }: { type: AISuggestion["type"] }) {
   if (type === "warning")
-    return <AlertTriangle size={16} className="text-yellow-400" />;
+    return <AlertTriangle size={16} style={{ color: "#e5c700" }} />;
   if (type === "success")
-    return <CheckCircle2 size={16} className="text-green-400" />;
-  return <Lightbulb size={16} className="text-blue-400" />;
+    return <CheckCircle2 size={16} style={{ color: "#94d60a" }} />;
+  return <Lightbulb size={16} style={{ color: "#72c4d6" }} />;
 }
 
 export default function Dashboard() {
   const kpis = [
-    {
-      label: "Työntekijöitä",
-      value: employees.length,
-      icon: Users,
-      color: "text-blue-400",
-    },
-    {
-      label: "Käyntejä tänään",
-      value: totalVisits,
-      icon: ClipboardList,
-      color: "text-green-400",
-    },
-    {
-      label: "Siirtymäaika yht.",
-      value: `${totalTravel} min`,
-      icon: Timer,
-      color: "text-yellow-400",
-    },
-    {
-      label: "Optimointiaste",
-      value: `${avgOptimization}%`,
-      icon: TrendingUp,
-      color: "text-emerald-400",
-    },
+    { label: "Työntekijöitä", value: employees.length, icon: Users, color: "#72c4d6" },
+    { label: "Käyntejä tänään", value: totalVisits, icon: ClipboardList, color: "#94d60a" },
+    { label: "Siirtymäaika yht.", value: `${totalTravel} min`, icon: Timer, color: "#e5c700" },
+    { label: "Optimointiaste", value: `${avgOptimization}%`, icon: TrendingUp, color: "#87c800" },
   ];
 
   return (
@@ -113,14 +93,14 @@ export default function Dashboard() {
           return (
             <div
               key={kpi.label}
-              className="rounded-xl border border-slate-700/50 p-4"
-              style={{ background: "#16213e" }}
+              className="rounded-xl p-4"
+              style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}
             >
               <div className="flex items-center gap-2 mb-2">
-                <Icon size={18} className={kpi.color} />
-                <span className="text-xs text-slate-400">{kpi.label}</span>
+                <Icon size={18} style={{ color: kpi.color }} />
+                <span className="text-xs" style={{ color: "#94a898" }}>{kpi.label}</span>
               </div>
-              <div className={`text-2xl font-bold ${kpi.color}`}>
+              <div className="text-2xl font-bold" style={{ color: kpi.color }}>
                 {kpi.value}
               </div>
             </div>
@@ -130,26 +110,23 @@ export default function Dashboard() {
 
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Chart */}
-        <div
-          className="rounded-xl border border-slate-700/50 p-4"
-          style={{ background: "#16213e" }}
-        >
+        <div className="rounded-xl p-4" style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}>
           <h2 className="text-lg font-semibold mb-4">Käynnit alueittain</h2>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={visitsByArea} layout="vertical">
-              <XAxis type="number" tick={{ fill: "#94a3b8", fontSize: 12 }} />
+              <XAxis type="number" tick={{ fill: "#94a898", fontSize: 12 }} />
               <YAxis
                 dataKey="name"
                 type="category"
                 width={80}
-                tick={{ fill: "#94a3b8", fontSize: 11 }}
+                tick={{ fill: "#94a898", fontSize: 11 }}
               />
               <Tooltip
                 contentStyle={{
-                  background: "#1a1a2e",
-                  border: "1px solid #334155",
+                  background: "#162016",
+                  border: "1px solid #2d4a2d",
                   borderRadius: 8,
-                  color: "#f1f5f9",
+                  color: "#f1f5f0",
                 }}
                 labelFormatter={(_, payload) =>
                   payload?.[0]?.payload?.fullName ?? ""
@@ -159,7 +136,7 @@ export default function Dashboard() {
                 {visitsByArea.map((entry) => (
                   <Cell
                     key={entry.fullName}
-                    fill={areaColors[entry.fullName as Area] ?? "#64748b"}
+                    fill={areaColors[entry.fullName as Area] ?? "#4a6a4a"}
                   />
                 ))}
               </Bar>
@@ -168,28 +145,23 @@ export default function Dashboard() {
         </div>
 
         {/* AI suggestions */}
-        <div
-          className="rounded-xl border border-slate-700/50 p-4"
-          style={{ background: "#16213e" }}
-        >
+        <div className="rounded-xl p-4" style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}>
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-            <Brain size={20} className="text-yellow-400" />
+            <BrainIcon size={20} color="#94d60a" />
             AI-suositukset
           </h2>
           <div className="space-y-3">
             {suggestions.map((s, i) => (
               <div
                 key={i}
-                className={`flex items-start gap-3 p-3 rounded-lg border ${
-                  s.type === "warning"
-                    ? "border-yellow-500/20 bg-yellow-500/5"
-                    : s.type === "success"
-                    ? "border-green-500/20 bg-green-500/5"
-                    : "border-blue-500/20 bg-blue-500/5"
-                }`}
+                className="flex items-start gap-3 p-3 rounded-lg"
+                style={{
+                  border: `1px solid ${s.type === "warning" ? "#e5c70030" : s.type === "success" ? "#94d60a30" : "#72c4d630"}`,
+                  background: s.type === "warning" ? "#e5c70008" : s.type === "success" ? "#94d60a08" : "#72c4d608",
+                }}
               >
                 <SuggestionIcon type={s.type} />
-                <span className="text-sm text-slate-300">{s.text}</span>
+                <span className="text-sm" style={{ color: "#c8d8c8" }}>{s.text}</span>
               </div>
             ))}
           </div>
@@ -199,19 +171,18 @@ export default function Dashboard() {
   );
 }
 
-function Brain(props: { size: number; className: string }) {
+function BrainIcon({ size, color }: { size: number; color: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={props.size}
-      height={props.size}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={props.className}
     >
       <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
       <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />

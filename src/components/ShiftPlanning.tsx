@@ -59,7 +59,8 @@ export default function ShiftPlanning() {
           <button
             onClick={handleAutoAssign}
             disabled={isAssigning}
-            className="flex items-center gap-2 px-4 py-2 bg-yellow-400 text-slate-900 rounded-lg font-semibold text-sm hover:bg-yellow-300 disabled:opacity-50 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm disabled:opacity-50 transition-all"
+            style={{ background: "#94d60a", color: "#0f1a0f" }}
           >
             <Bot size={16} className={isAssigning ? "animate-spin" : ""} />
             {isAssigning ? "AI laskee..." : "AI: Jaa kaikki"}
@@ -85,8 +86,8 @@ export default function ShiftPlanning() {
                   onClick={() => setSelectedJobId(job.id)}
                   className={`w-full text-left p-3 rounded-xl border transition-all ${
                     isSelected
-                      ? "border-yellow-400/50 bg-yellow-400/5"
-                      : "border-slate-700/50 hover:border-slate-600"
+                      ? "border-[#94d60a50] bg-[#94d60a08]"
+                      : "border-[#2d4a2d] hover:border-slate-600"
                   }`}
                   style={{ background: isSelected ? undefined : "#16213e" }}
                 >
@@ -133,8 +134,8 @@ export default function ShiftPlanning() {
           {selectedJob ? (
             <>
               <div
-                className="rounded-xl border border-slate-700/50 p-4"
-                style={{ background: "#16213e" }}
+                className="rounded-xl border border-[#2d4a2d] p-4"
+                style={{ background: "#1a2a1a" }}
               >
                 <h2 className="font-semibold text-lg mb-1">
                   {selectedJob.clientName}
@@ -181,8 +182,8 @@ export default function ShiftPlanning() {
                       selectedJob.assignedTo === r.employee.id
                         ? "border-green-400/50 bg-green-400/5"
                         : idx === 0
-                        ? "border-yellow-400/30 bg-yellow-400/5"
-                        : "border-slate-700/50 hover:border-slate-600"
+                        ? "border-[#94d60a30] bg-[#94d60a08]"
+                        : "border-[#2d4a2d] hover:border-slate-600"
                     }`}
                     style={{
                       background:
@@ -205,7 +206,7 @@ export default function ShiftPlanning() {
                             {r.employee.name}
                           </span>
                           {idx === 0 && (
-                            <span className="text-xs bg-yellow-400/20 text-yellow-300 px-1.5 py-0.5 rounded">
+                            <span className="text-xs bg-[#94d60a20] text-[#94d60a] px-1.5 py-0.5 rounded">
                               Paras
                             </span>
                           )}
@@ -241,8 +242,8 @@ export default function ShiftPlanning() {
 
               {/* Legend */}
               <div
-                className="rounded-lg border border-slate-700/50 p-3 text-xs text-slate-400"
-                style={{ background: "#16213e" }}
+                className="rounded-lg border border-[#2d4a2d] p-3 text-xs text-slate-400"
+                style={{ background: "#1a2a1a" }}
               >
                 <div className="font-semibold mb-1 text-slate-300">
                   Pisteytyksen selitykset
