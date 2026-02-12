@@ -1,11 +1,11 @@
 import type { Skill } from "../../types";
 
 const skillColors: Record<Skill, string> = {
-  ylläpito: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  teollisuus: "bg-orange-500/20 text-orange-300 border-orange-500/30",
-  loppusiivous: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-  toimisto: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-  ikkunat: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
+  ylläpito: "bg-blue-500/10 text-blue-700 border-blue-500/30",
+  teollisuus: "bg-orange-500/10 text-orange-700 border-orange-500/30",
+  loppusiivous: "bg-purple-500/10 text-purple-700 border-purple-500/30",
+  toimisto: "bg-emerald-500/10 text-emerald-700 border-emerald-500/30",
+  ikkunat: "bg-cyan-500/10 text-cyan-700 border-cyan-500/30",
 };
 
 const skillLabels: Record<Skill, string> = {

@@ -68,17 +68,17 @@ const suggestions: AISuggestion[] = [
 
 function SuggestionIcon({ type }: { type: AISuggestion["type"] }) {
   if (type === "warning")
-    return <AlertTriangle size={16} style={{ color: "#e5c700" }} />;
+    return <AlertTriangle size={16} style={{ color: "#d97706" }} />;
   if (type === "success")
-    return <CheckCircle2 size={16} style={{ color: "#94d60a" }} />;
+    return <CheckCircle2 size={16} style={{ color: "#6ba200" }} />;
   return <Lightbulb size={16} style={{ color: "#72c4d6" }} />;
 }
 
 export default function Dashboard() {
   const kpis = [
     { label: "Työntekijöitä", value: employees.length, icon: Users, color: "#72c4d6" },
-    { label: "Käyntejä tänään", value: totalVisits, icon: ClipboardList, color: "#94d60a" },
-    { label: "Siirtymäaika yht.", value: `${totalTravel} min`, icon: Timer, color: "#e5c700" },
+    { label: "Käyntejä tänään", value: totalVisits, icon: ClipboardList, color: "#6ba200" },
+    { label: "Siirtymäaika yht.", value: `${totalTravel} min`, icon: Timer, color: "#d97706" },
     { label: "Optimointiaste", value: `${avgOptimization}%`, icon: TrendingUp, color: "#87c800" },
   ];
 
@@ -94,11 +94,11 @@ export default function Dashboard() {
             <div
               key={kpi.label}
               className="rounded-xl p-4"
-              style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}
+              style={{ background: "#ffffff", border: "1px solid #e2e8d5" }}
             >
               <div className="flex items-center gap-2 mb-2">
                 <Icon size={18} style={{ color: kpi.color }} />
-                <span className="text-xs" style={{ color: "#94a898" }}>{kpi.label}</span>
+                <span className="text-xs" style={{ color: "#64748b" }}>{kpi.label}</span>
               </div>
               <div className="text-2xl font-bold" style={{ color: kpi.color }}>
                 {kpi.value}
@@ -110,23 +110,23 @@ export default function Dashboard() {
 
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Chart */}
-        <div className="rounded-xl p-4" style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}>
+        <div className="rounded-xl p-4" style={{ background: "#ffffff", border: "1px solid #e2e8d5" }}>
           <h2 className="text-lg font-semibold mb-4">Käynnit alueittain</h2>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={visitsByArea} layout="vertical">
-              <XAxis type="number" tick={{ fill: "#94a898", fontSize: 12 }} />
+              <XAxis type="number" tick={{ fill: "#64748b", fontSize: 12 }} />
               <YAxis
                 dataKey="name"
                 type="category"
                 width={80}
-                tick={{ fill: "#94a898", fontSize: 11 }}
+                tick={{ fill: "#64748b", fontSize: 11 }}
               />
               <Tooltip
                 contentStyle={{
-                  background: "#162016",
-                  border: "1px solid #2d4a2d",
+                  background: "#ffffff",
+                  border: "1px solid #e2e8d5",
                   borderRadius: 8,
-                  color: "#f1f5f0",
+                  color: "#1e293b",
                 }}
                 labelFormatter={(_, payload) =>
                   payload?.[0]?.payload?.fullName ?? ""
@@ -136,7 +136,7 @@ export default function Dashboard() {
                 {visitsByArea.map((entry) => (
                   <Cell
                     key={entry.fullName}
-                    fill={areaColors[entry.fullName as Area] ?? "#4a6a4a"}
+                    fill={areaColors[entry.fullName as Area] ?? "#94d60a"}
                   />
                 ))}
               </Bar>
@@ -145,9 +145,9 @@ export default function Dashboard() {
         </div>
 
         {/* AI suggestions */}
-        <div className="rounded-xl p-4" style={{ background: "#1a2a1a", border: "1px solid #2d4a2d" }}>
+        <div className="rounded-xl p-4" style={{ background: "#ffffff", border: "1px solid #e2e8d5" }}>
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-            <BrainIcon size={20} color="#94d60a" />
+            <BrainIcon size={20} color="#6ba200" />
             AI-suositukset
           </h2>
           <div className="space-y-3">
@@ -156,12 +156,12 @@ export default function Dashboard() {
                 key={i}
                 className="flex items-start gap-3 p-3 rounded-lg"
                 style={{
-                  border: `1px solid ${s.type === "warning" ? "#e5c70030" : s.type === "success" ? "#94d60a30" : "#72c4d630"}`,
-                  background: s.type === "warning" ? "#e5c70008" : s.type === "success" ? "#94d60a08" : "#72c4d608",
+                  border: `1px solid ${s.type === "warning" ? "#d9770630" : s.type === "success" ? "#94d60a30" : "#72c4d630"}`,
+                  background: s.type === "warning" ? "#d9770608" : s.type === "success" ? "#94d60a08" : "#72c4d608",
                 }}
               >
                 <SuggestionIcon type={s.type} />
-                <span className="text-sm" style={{ color: "#c8d8c8" }}>{s.text}</span>
+                <span className="text-sm" style={{ color: "#334155" }}>{s.text}</span>
               </div>
             ))}
           </div>

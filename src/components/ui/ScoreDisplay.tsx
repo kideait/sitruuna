@@ -40,27 +40,27 @@ export default function ScoreDisplay({
     <div className="rounded-lg p-3" style={{ background: scoreBg(score.total), border: `1px solid ${scoreBorder(score.total)}` }}>
       <div className="text-2xl font-bold mb-2" style={{ color: scoreColor(score.total) }}>
         {score.total}
-        <span className="text-sm font-normal" style={{ color: "#94a898" }}> / 100</span>
+        <span className="text-sm font-normal" style={{ color: "#64748b" }}> / 100</span>
       </div>
       <div className="grid grid-cols-2 gap-1 text-xs">
         <div className="flex items-center gap-1">
           <span>🎯</span>
-          <span style={{ color: "#94a898" }}>Osaaminen:</span>
+          <span style={{ color: "#64748b" }}>Osaaminen:</span>
           <span className="font-medium">{score.skill}</span>
         </div>
         <div className="flex items-center gap-1">
           <span>🔄</span>
-          <span style={{ color: "#94a898" }}>Historia:</span>
+          <span style={{ color: "#64748b" }}>Historia:</span>
           <span className="font-medium">{score.history}</span>
         </div>
         <div className="flex items-center gap-1">
           <span>📍</span>
-          <span style={{ color: "#94a898" }}>Reitti:</span>
+          <span style={{ color: "#64748b" }}>Reitti:</span>
           <span className="font-medium">{score.route}</span>
         </div>
         <div className="flex items-center gap-1">
           <span>⏰</span>
-          <span style={{ color: "#94a898" }}>Tunnit:</span>
+          <span style={{ color: "#64748b" }}>Tunnit:</span>
           <span className="font-medium">{score.capacity}</span>
         </div>
       </div>

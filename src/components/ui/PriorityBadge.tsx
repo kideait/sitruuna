@@ -1,7 +1,7 @@
 const cfg = {
-  high: { label: "Kiireellinen", cls: "bg-red-500/20 text-red-300 border-red-500/40" },
-  medium: { label: "Normaali", cls: "bg-yellow-500/20 text-yellow-300 border-yellow-500/40" },
-  low: { label: "Matala", cls: "bg-green-500/20 text-green-300 border-green-500/40" },
+  high: { label: "Kiireellinen", cls: "bg-red-500/10 text-red-700 border-red-500/30" },
+  medium: { label: "Normaali", cls: "bg-yellow-500/10 text-yellow-700 border-yellow-500/30" },
+  low: { label: "Matala", cls: "bg-green-500/10 text-green-700 border-green-500/30" },
 };
 
 export default function PriorityBadge({ priority }: { priority: "high" | "medium" | "low" }) {

@@ -600,14 +600,6 @@ export default function CalendarView({ clients }: { clients: Client[] }) {
         </div>
       </div>
 
-      {/* Weekly overview */}
-      <WeeklyOverview
-        weekOffset={weekOffset}
-        setWeekOffset={setWeekOffset}
-        selectedDayIndex={selectedDayIndex}
-        onSelectDay={handleSelectDay}
-      />
-
       {/* Day header */}
       <div className="text-sm font-medium" style={{ color: "#64748b" }}>
         {DAY_NAMES[selectedDayIndex]} {formatDate(selectedDate)} &mdash; {appointments.length} varausta
@@ -792,6 +784,14 @@ export default function CalendarView({ clients }: { clients: Client[] }) {
           })}
         </div>
       </div>
+
+      {/* Weekly overview */}
+      <WeeklyOverview
+        weekOffset={weekOffset}
+        setWeekOffset={setWeekOffset}
+        selectedDayIndex={selectedDayIndex}
+        onSelectDay={handleSelectDay}
+      />
 
       {/* Modal */}
       {editingApp && (

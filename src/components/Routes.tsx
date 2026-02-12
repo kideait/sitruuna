@@ -36,7 +36,7 @@ export default function RoutesView() {
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-all border ${
                 isActive
                   ? "border-current"
-                  : "border-[#2d4a2d] text-slate-400 hover:text-slate-200"
+                  : "border-[#e2e8d5] text-slate-500 hover:text-slate-700"
               }`}
               style={
                 isActive
@@ -45,7 +45,7 @@ export default function RoutesView() {
                       backgroundColor: emp.color + "15",
                       borderColor: emp.color + "50",
                     }
-                  : { background: "#16213e" }
+                  : { background: "#ffffff" }
               }
             >
               <div
@@ -61,10 +61,10 @@ export default function RoutesView() {
       {/* Route info */}
       <div className="grid sm:grid-cols-3 gap-3">
         <div
-          className="rounded-xl border border-[#2d4a2d] p-4"
-          style={{ background: "#1a2a1a" }}
+          className="rounded-xl border p-4"
+          style={{ background: "#ffffff", borderColor: "#e2e8d5" }}
         >
-          <div className="text-xs text-slate-400 mb-1">Työntekijä</div>
+          <div className="text-xs mb-1" style={{ color: "#64748b" }}>Työntekijä</div>
           <div className="flex items-center gap-2">
             <div
               className="w-4 h-4 rounded-full"
@@ -72,27 +72,27 @@ export default function RoutesView() {
             />
             <span className="font-semibold">{selectedEmp.name}</span>
           </div>
-          <div className="text-xs text-slate-400 mt-1">
+          <div className="text-xs mt-1" style={{ color: "#64748b" }}>
             Kotialue: {selectedEmp.homeArea}
           </div>
         </div>
         <div
-          className="rounded-xl border border-[#2d4a2d] p-4"
-          style={{ background: "#1a2a1a" }}
+          className="rounded-xl border p-4"
+          style={{ background: "#ffffff", borderColor: "#e2e8d5" }}
         >
-          <div className="text-xs text-slate-400 mb-1">Käynnit tänään</div>
+          <div className="text-xs mb-1" style={{ color: "#64748b" }}>Käynnit tänään</div>
           <div className="text-2xl font-bold" style={{ color: "#72c4d6" }}>{empApps.length}</div>
-          <div className="text-xs text-slate-400 mt-1">
+          <div className="text-xs mt-1" style={{ color: "#64748b" }}>
             Työtunteja: {totalWork}h
           </div>
         </div>
         <div
-          className="rounded-xl border border-[#2d4a2d] p-4"
-          style={{ background: "#1a2a1a" }}
+          className="rounded-xl border p-4"
+          style={{ background: "#ffffff", borderColor: "#e2e8d5" }}
         >
-          <div className="text-xs text-slate-400 mb-1">Siirtymäaika yhteensä</div>
-          <div className="text-2xl font-bold" style={{ color: "#94d60a" }}>{totalTravel} min</div>
-          <div className="text-xs text-slate-400 mt-1">
+          <div className="text-xs mb-1" style={{ color: "#64748b" }}>Siirtymäaika yhteensä</div>
+          <div className="text-2xl font-bold" style={{ color: "#6ba200" }}>{totalTravel} min</div>
+          <div className="text-xs mt-1" style={{ color: "#64748b" }}>
             AI-optimoitu reitti
           </div>
         </div>
@@ -100,8 +100,8 @@ export default function RoutesView() {
 
       {/* Timeline */}
       <div
-        className="rounded-xl border border-[#2d4a2d] p-4"
-        style={{ background: "#1a2a1a" }}
+        className="rounded-xl border p-4"
+        style={{ background: "#ffffff", borderColor: "#e2e8d5" }}
       >
         <h2 className="text-lg font-semibold mb-4">Päivän aikajana</h2>
         <div className="space-y-0">
@@ -111,14 +111,14 @@ export default function RoutesView() {
               {idx > 0 && app.travelTimeMinutes > 0 && (
                 <div className="flex items-center gap-3 py-2 pl-6">
                   <div className="flex flex-col items-center">
-                    <div className="w-0.5 h-3 bg-slate-600" />
+                    <div className="w-0.5 h-3 bg-slate-300" />
                     <Car size={14} className="text-slate-400 my-1" />
-                    <div className="w-0.5 h-3 bg-slate-600" />
+                    <div className="w-0.5 h-3 bg-slate-300" />
                   </div>
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-slate-500">
                     Siirtymä: {app.travelTimeMinutes} min
                     {app.area !== empApps[idx - 1].area && (
-                      <span className="text-slate-500">
+                      <span className="text-slate-400">
                         {" "}
                         ({empApps[idx - 1].area} → {app.area})
                       </span>
@@ -128,7 +128,7 @@ export default function RoutesView() {
               )}
 
               {/* Appointment card */}
-              <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-800/30 transition-all">
+              <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-all">
                 <div className="flex flex-col items-center">
                   <div
                     className="w-4 h-4 rounded-full border-2 flex-shrink-0"
@@ -146,7 +146,7 @@ export default function RoutesView() {
                 </div>
                 <div className="flex-1">
                   <div className="font-medium text-sm">{app.clientName}</div>
-                  <div className="flex flex-wrap gap-3 text-xs text-slate-400 mt-1">
+                  <div className="flex flex-wrap gap-3 text-xs text-slate-500 mt-1">
                     <span className="flex items-center gap-1">
                       <Clock size={12} />
                       {formatHour(app.startHour)} –{" "}
@@ -158,7 +158,7 @@ export default function RoutesView() {
                       {app.area}
                     </span>
                   </div>
-                  <div className="text-xs text-slate-500 mt-0.5">
+                  <div className="text-xs text-slate-400 mt-0.5">
                     {app.clientType}
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function RoutesView() {
           ))}
 
           {empApps.length === 0 && (
-            <div className="text-center py-8 text-slate-500">
+            <div className="text-center py-8 text-slate-400">
               Ei käyntejä tänään
             </div>
           )}
