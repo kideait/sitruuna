@@ -42,7 +42,7 @@ export const jobs: Job[] = [
     requiredSkill: "ylläpito",
     hoursPerVisit: 2,
     frequency: "3x/vko",
-    previousWorkerIds: [7, 12],
+    previousWorkerIds: [2, 5],
     priority: "medium",
   },
   {
@@ -75,7 +75,7 @@ export const jobs: Job[] = [
     requiredSkill: "toimisto",
     hoursPerVisit: 2.5,
     frequency: "3x/vko",
-    previousWorkerIds: [6, 13],
+    previousWorkerIds: [6],
     priority: "medium",
   },
   {
@@ -97,7 +97,7 @@ export const jobs: Job[] = [
     requiredSkill: "toimisto",
     hoursPerVisit: 2,
     frequency: "5x/vko",
-    previousWorkerIds: [1, 11],
+    previousWorkerIds: [1],
     priority: "medium",
   },
   {
@@ -130,7 +130,7 @@ export const jobs: Job[] = [
     requiredSkill: "ikkunat",
     hoursPerVisit: 3,
     frequency: "1x/vko",
-    previousWorkerIds: [7, 15],
+    previousWorkerIds: [2, 15],
     priority: "low",
   },
   {
@@ -141,7 +141,7 @@ export const jobs: Job[] = [
     requiredSkill: "teollisuus",
     hoursPerVisit: 3.5,
     frequency: "5x/vko",
-    previousWorkerIds: [3, 7],
+    previousWorkerIds: [3],
     priority: "high",
   },
   {
@@ -163,7 +163,7 @@ export const jobs: Job[] = [
     requiredSkill: "loppusiivous",
     hoursPerVisit: 3,
     frequency: "kertaluont.",
-    previousWorkerIds: [5, 12],
+    previousWorkerIds: [5],
     priority: "medium",
   },
   {
@@ -185,7 +185,7 @@ export const jobs: Job[] = [
     requiredSkill: "ylläpito",
     hoursPerVisit: 1,
     frequency: "1x/vko",
-    previousWorkerIds: [15, 11],
+    previousWorkerIds: [15],
     priority: "low",
   },
   {
@@ -196,7 +196,7 @@ export const jobs: Job[] = [
     requiredSkill: "ylläpito",
     hoursPerVisit: 1.5,
     frequency: "5x/vko",
-    previousWorkerIds: [12, 16],
+    previousWorkerIds: [1, 16],
     priority: "medium",
   },
 ];

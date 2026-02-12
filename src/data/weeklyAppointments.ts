@@ -9,13 +9,13 @@ import type { Appointment } from "../types";
 //   kertaluont. = ma (tällä viikolla)
 
 export const weeklyAppointments: Record<number, Appointment[]> = {
-  // MAANANTAI – 39 varausta (5x + 3x + kertaluontoiset)
+  // MAANANTAI (5x + 3x + kertaluontoiset)
   0: [
     // Aleksandra - toimisto
     { id: "w0-1", employeeId: 1, clientName: "Varkauden kaupungintalo", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w0-2", employeeId: 1, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 8 },
     { id: "w0-3", employeeId: 1, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 13, duration: 1.5, travelTimeMinutes: 10 },
-    // Anne N
+    // Anne
     { id: "w0-4", employeeId: 2, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
     { id: "w0-5", employeeId: 2, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9, duration: 2, travelTimeMinutes: 12 },
     // Annukka - teollisuus
@@ -29,27 +29,14 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     // Irina - Joroinen
     { id: "w0-11", employeeId: 6, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
     { id: "w0-12", employeeId: 6, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
-    // Johanna
-    { id: "w0-13", employeeId: 7, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w0-14", employeeId: 7, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9.5, duration: 1.5, travelTimeMinutes: 8 },
-    // Katariina - Leppävirta
+    // Katarina - Leppävirta
     { id: "w0-15", employeeId: 8, clientName: "S-Market Leppävirta", area: "Leppävirta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
     { id: "w0-16", employeeId: 8, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 9.5, duration: 3, travelTimeMinutes: 5 },
-    // Marja J - teollisuus
+    // Marja - teollisuus
     { id: "w0-17", employeeId: 9, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     { id: "w0-18", employeeId: 9, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 11.5, duration: 1.5, travelTimeMinutes: 5 },
     // Marjatta - osa-aika
     { id: "w0-19", employeeId: 10, clientName: "Kangaslammin koulu", area: "Kangaslampi", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    // Martina
-    { id: "w0-20", employeeId: 11, clientName: "Taloyhtiö Osmonkatu 8", area: "Varkaus pohjoinen", clientType: "Taloyhtiö", startHour: 7, duration: 1, travelTimeMinutes: 0 },
-    { id: "w0-21", employeeId: 11, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 8.5, duration: 2, travelTimeMinutes: 10 },
-    { id: "w0-22", employeeId: 11, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 11, duration: 3.5, travelTimeMinutes: 10 },
-    // Mervi
-    { id: "w0-23", employeeId: 12, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w0-24", employeeId: 12, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9, duration: 2, travelTimeMinutes: 5 },
-    // Minna - Joroinen
-    { id: "w0-25", employeeId: 13, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
-    { id: "w0-26", employeeId: 13, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
     // Päivi - teollisuus
     { id: "w0-27", employeeId: 14, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     { id: "w0-28", employeeId: 14, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 11.5, duration: 1.5, travelTimeMinutes: 5 },
@@ -64,13 +51,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w0-34", employeeId: 17, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 11, duration: 3, travelTimeMinutes: 5 },
   ],
 
-  // TIISTAI – 35 varausta (5x + 2x, ei 3x/vko eikä kertaluontoisia)
+  // TIISTAI (5x + 2x, ei 3x/vko eikä kertaluontoisia)
   1: [
     // Aleksandra
     { id: "w1-1", employeeId: 1, clientName: "Varkauden kaupungintalo", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w1-2", employeeId: 1, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 8 },
     { id: "w1-3", employeeId: 1, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 13, duration: 1.5, travelTimeMinutes: 10 },
-    // Anne N - 2x/vko työ
+    // Anne - 2x/vko työ
     { id: "w1-4", employeeId: 2, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
     // Annukka
     { id: "w1-5", employeeId: 3, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 7, duration: 3.5, travelTimeMinutes: 0 },
@@ -81,24 +68,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w1-8", employeeId: 5, clientName: "Ahlström-Munksjö tehdasalue", area: "Varkaus keskusta", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Irina
     { id: "w1-9", employeeId: 6, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 8, duration: 2.5, travelTimeMinutes: 0 },
-    // Johanna
-    { id: "w1-10", employeeId: 7, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w1-11", employeeId: 7, clientName: "Taloyhtiö Kauppakatu 5", area: "Varkaus keskusta", clientType: "Taloyhtiö", startHour: 9, duration: 3, travelTimeMinutes: 5 },
-    // Katariina
+    // Katarina
     { id: "w1-12", employeeId: 8, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w1-13", employeeId: 8, clientName: "S-Market Leppävirta", area: "Leppävirta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 5 },
-    // Marja J
+    // Marja
     { id: "w1-14", employeeId: 9, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Marjatta
     { id: "w1-15", employeeId: 10, clientName: "Kangaslammin koulu", area: "Kangaslampi", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    // Martina
-    { id: "w1-16", employeeId: 11, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w1-17", employeeId: 11, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 9.5, duration: 3.5, travelTimeMinutes: 10 },
-    // Mervi
-    { id: "w1-18", employeeId: 12, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w1-19", employeeId: 12, clientName: "Huruslahden uudiskohde", area: "Varkaus keskusta", clientType: "Yksityinen", startHour: 9, duration: 3, travelTimeMinutes: 8 },
-    // Minna
-    { id: "w1-20", employeeId: 13, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
     // Päivi
     { id: "w1-21", employeeId: 14, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Taru
@@ -111,13 +87,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w1-26", employeeId: 17, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 9.5, duration: 3, travelTimeMinutes: 5 },
   ],
 
-  // KESKIVIIKKO – 32 varausta (5x + 3x + 1x/vko)
+  // KESKIVIIKKO (5x + 3x + 1x/vko)
   2: [
     // Aleksandra
     { id: "w2-1", employeeId: 1, clientName: "Varkauden kaupungintalo", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w2-2", employeeId: 1, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 8 },
     { id: "w2-3", employeeId: 1, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 13, duration: 1.5, travelTimeMinutes: 10 },
-    // Anne N - 1x/vko ikkunat
+    // Anne - 1x/vko ikkunat
     { id: "w2-4", employeeId: 2, clientName: "Taloyhtiö Kauppakatu 5", area: "Varkaus keskusta", clientType: "Taloyhtiö", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w2-5", employeeId: 2, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 5 },
     // Annukka
@@ -129,25 +105,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     // Irina - 3x/vko
     { id: "w2-9", employeeId: 6, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
     { id: "w2-10", employeeId: 6, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
-    // Johanna - 3x/vko
-    { id: "w2-11", employeeId: 7, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w2-12", employeeId: 7, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9.5, duration: 1.5, travelTimeMinutes: 8 },
-    // Katariina
+    // Katarina
     { id: "w2-13", employeeId: 8, clientName: "S-Market Leppävirta", area: "Leppävirta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
     { id: "w2-14", employeeId: 8, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 9.5, duration: 3, travelTimeMinutes: 5 },
-    // Marja J
+    // Marja
     { id: "w2-15", employeeId: 9, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Marjatta
     { id: "w2-16", employeeId: 10, clientName: "Kangaslammin koulu", area: "Kangaslampi", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    // Martina
-    { id: "w2-17", employeeId: 11, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w2-18", employeeId: 11, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 9.5, duration: 3.5, travelTimeMinutes: 10 },
-    // Mervi
-    { id: "w2-19", employeeId: 12, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w2-20", employeeId: 12, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9, duration: 2, travelTimeMinutes: 5 },
-    // Minna - 3x/vko
-    { id: "w2-21", employeeId: 13, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
-    { id: "w2-22", employeeId: 13, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
     // Päivi
     { id: "w2-23", employeeId: 14, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Taru - 1x/vko
@@ -162,13 +126,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w2-30", employeeId: 17, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 11, duration: 3, travelTimeMinutes: 5 },
   ],
 
-  // TORSTAI – 38 varausta (5x + 2x, vaihtelua tiistaihin verrattuna)
+  // TORSTAI (5x + 2x)
   3: [
     // Aleksandra
     { id: "w3-1", employeeId: 1, clientName: "Varkauden kaupungintalo", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
     { id: "w3-2", employeeId: 1, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 10.5, duration: 2, travelTimeMinutes: 8 },
     { id: "w3-3", employeeId: 1, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 13, duration: 1.5, travelTimeMinutes: 10 },
-    // Anne N - 2x/vko
+    // Anne - 2x/vko
     { id: "w3-4", employeeId: 2, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
     { id: "w3-5", employeeId: 2, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9, duration: 2, travelTimeMinutes: 12 },
     // Annukka
@@ -180,28 +144,14 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w3-9", employeeId: 5, clientName: "Ahlström-Munksjö tehdasalue", area: "Varkaus keskusta", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Irina
     { id: "w3-10", employeeId: 6, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
-    // Johanna
-    { id: "w3-11", employeeId: 7, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w3-12", employeeId: 7, clientName: "Taloyhtiö Kauppakatu 5", area: "Varkaus keskusta", clientType: "Taloyhtiö", startHour: 9, duration: 3, travelTimeMinutes: 5 },
-    { id: "w3-13", employeeId: 7, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 12.5, duration: 2, travelTimeMinutes: 5 },
-    // Katariina
+    // Katarina
     { id: "w3-14", employeeId: 8, clientName: "S-Market Leppävirta", area: "Leppävirta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
     { id: "w3-15", employeeId: 8, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 9.5, duration: 3, travelTimeMinutes: 5 },
-    // Marja J
+    // Marja
     { id: "w3-16", employeeId: 9, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     { id: "w3-17", employeeId: 9, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 11.5, duration: 1.5, travelTimeMinutes: 5 },
     // Marjatta
     { id: "w3-18", employeeId: 10, clientName: "Kangaslammin koulu", area: "Kangaslampi", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    // Martina
-    { id: "w3-19", employeeId: 11, clientName: "Taloyhtiö Osmonkatu 8", area: "Varkaus pohjoinen", clientType: "Taloyhtiö", startHour: 7, duration: 1, travelTimeMinutes: 0 },
-    { id: "w3-20", employeeId: 11, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 8.5, duration: 2, travelTimeMinutes: 10 },
-    { id: "w3-21", employeeId: 11, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 11, duration: 3.5, travelTimeMinutes: 10 },
-    // Mervi
-    { id: "w3-22", employeeId: 12, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w3-23", employeeId: 12, clientName: "Huruslahden uudiskohde", area: "Varkaus keskusta", clientType: "Yksityinen", startHour: 9, duration: 3, travelTimeMinutes: 8 },
-    { id: "w3-24", employeeId: 12, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 12.5, duration: 2, travelTimeMinutes: 5 },
-    // Minna
-    { id: "w3-25", employeeId: 13, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
     // Päivi
     { id: "w3-26", employeeId: 14, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     { id: "w3-27", employeeId: 14, clientName: "Taloyhtiö Koskentie 12", area: "Varkaus etelä", clientType: "Taloyhtiö", startHour: 11.5, duration: 1.5, travelTimeMinutes: 5 },
@@ -216,7 +166,7 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     { id: "w3-33", employeeId: 17, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 11, duration: 3, travelTimeMinutes: 5 },
   ],
 
-  // PERJANTAI – 28 varausta (5x + 3x, kevyempi päivä)
+  // PERJANTAI (5x + 3x, kevyempi päivä)
   4: [
     // Aleksandra
     { id: "w4-1", employeeId: 1, clientName: "Varkauden kaupungintalo", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 3, travelTimeMinutes: 0 },
@@ -230,25 +180,13 @@ export const weeklyAppointments: Record<number, Appointment[]> = {
     // Irina - 3x/vko
     { id: "w4-6", employeeId: 6, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
     { id: "w4-7", employeeId: 6, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
-    // Johanna - 3x/vko
-    { id: "w4-8", employeeId: 7, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w4-9", employeeId: 7, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9.5, duration: 1.5, travelTimeMinutes: 8 },
-    // Katariina
+    // Katarina
     { id: "w4-10", employeeId: 8, clientName: "S-Market Leppävirta", area: "Leppävirta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
     { id: "w4-11", employeeId: 8, clientName: "Leppävirran terveyskeskus", area: "Leppävirta", clientType: "Yritys", startHour: 9.5, duration: 3, travelTimeMinutes: 5 },
-    // Marja J
+    // Marja
     { id: "w4-12", employeeId: 9, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Marjatta
     { id: "w4-13", employeeId: 10, clientName: "Kangaslammin koulu", area: "Kangaslampi", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    // Martina
-    { id: "w4-14", employeeId: 11, clientName: "Navitas Businesspark", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 2, travelTimeMinutes: 0 },
-    { id: "w4-15", employeeId: 11, clientName: "Warkaus Works teollisuusalue", area: "Varkaus pohjoinen", clientType: "Teollisuus", startHour: 9.5, duration: 3.5, travelTimeMinutes: 10 },
-    // Mervi - 3x/vko
-    { id: "w4-16", employeeId: 12, clientName: "Kuntokeskus FitVarkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 7, duration: 1.5, travelTimeMinutes: 0 },
-    { id: "w4-17", employeeId: 12, clientName: "K-Supermarket Varkaus", area: "Varkaus keskusta", clientType: "Yritys", startHour: 9, duration: 2, travelTimeMinutes: 5 },
-    // Minna - 3x/vko
-    { id: "w4-18", employeeId: 13, clientName: "Joroisten kunta / virastotalo", area: "Joroinen", clientType: "Yritys", startHour: 7, duration: 2.5, travelTimeMinutes: 0 },
-    { id: "w4-19", employeeId: 13, clientName: "Joroisten S-Market", area: "Joroinen", clientType: "Yritys", startHour: 10, duration: 1.5, travelTimeMinutes: 5 },
     // Päivi
     { id: "w4-20", employeeId: 14, clientName: "Stora Enso tehdas", area: "Varkaus etelä", clientType: "Teollisuus", startHour: 7, duration: 4, travelTimeMinutes: 0 },
     // Tetiana
