@@ -8,6 +8,18 @@ export type Area =
   | "Joroinen"
   | "Kangaslampi";
 
+export type ClientType = "Yritys" | "Kuluttaja";
+
+export interface Client {
+  id: string;
+  name: string;
+  type: ClientType;
+  area: Area;
+  contactPerson?: string;
+  phone?: string;
+  email?: string;
+}
+
 export interface Employee {
   id: number;
   name: string;
@@ -41,6 +53,7 @@ export interface Appointment {
   startHour: number;
   duration: number;
   travelTimeMinutes: number;
+  clientId?: string;
 }
 
 export interface ScoreBreakdown {
